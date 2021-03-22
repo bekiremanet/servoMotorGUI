@@ -1,0 +1,76 @@
+#include <Servo.h>
+
+Servo Servo1;
+Servo Servo2;
+Servo Servo3;
+Servo Servo4;
+Servo Servo5;
+
+//Global Variables
+char c;
+String dataIn;
+uint8_t servo1Degree,servo2Degree,servo3Degree,servo4Degree,servo5Degree;
+int8_t indexOfA, indexOfB,indexOfC, indexOfD, indexOfE;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(57600);
+  Serial.println("robyServoController");
+  Serial.println("Created by @bekiremanet");
+
+  Servo1.attach(3);
+  Servo2.attach(5);
+  Servo3.attach(6);
+  Servo4.attach(9);
+  Servo5.attach(10);
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+  Receive_Serial_Data();
+  if(c=='\n')
+  {
+    Parse_the_Data();
+    c=0;
+    dataIn="";
+  } 
+
+  Servo1.write(servo1Degree);
+  Servo2.write(servo2Degree);
+  Servo3.write(servo3Degree);
+  Servo4.write(servo4Degree);
+  Servo5.write(servo5Degree);
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Receive_Serial_Data()
+{
+  while(Serial.available() > 0)
+  {
+      c=Serial.read();
+      if(c=='\n') {break;}
+      else  {dataIn+=c;}
+  }
+}
+
+void Parse_the_Data()
+{
+    String str_servo1Degree, str_servo2Degree, str_servo3Degree, str_servo4Degree, str_servo5Degree;
+
+    indexOfA = dataIn.indexOf("A");
+    indexOfB = dataIn.indexOf("B");
+    indexOfC = dataIn.indexOf("C");
+    indexOfD = dataIn.indexOf("D");
+    indexOfE = dataIn.indexOf("E");
+
+    if(indexOfA > -1) {  str_servo1Degree = dataIn.substring(0, indexOfA);              servo1Degree = str_servo1Degree.toInt();  }
+    if(indexOfB > -1) {  str_servo2Degree = dataIn.substring(indexOfA+1, indexOfB);     servo2Degree = str_servo2Degree.toInt();  }
+    if(indexOfC > -1) {  str_servo3Degree = dataIn.substring(indexOfB+1, indexOfC);     servo3Degree = str_servo3Degree.toInt();  }
+    if(indexOfD > -1) {  str_servo4Degree = dataIn.substring(indexOfC+1, indexOfD);     servo4Degree = str_servo4Degree.toInt();  }
+    if(indexOfE > -1) {  str_servo5Degree = dataIn.substring(indexOfD+1, indexOfE);     servo5Degree = str_servo5Degree.toInt();  }
+}
