@@ -1,0 +1,10 @@
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\bin\Debug\robyTestApp.exe.config
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\bin\Debug\robyTestApp.exe
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\bin\Debug\robyTestApp.pdb
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.csprojAssemblyReference.cache
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.Form1.resources
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.Properties.Resources.resources
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.csproj.GenerateResource.cache
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.csproj.CoreCompileInputs.cache
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.exe
+C:\Users\Bekir Emanet\source\repos\robyTestApp\robyTestApp\obj\Debug\robyTestApp.pdb
